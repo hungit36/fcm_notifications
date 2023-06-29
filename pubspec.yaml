@@ -1,5 +1,5 @@
 name: fcm_notifications
-description: A new Flutter plugin project.
+description: FCM Notifications add-on plugin to send push notifications through Firebase Cloud Messaging, enabling all awesome notifications features.
 version: 0.0.1
 repository: https://github.com/hungit36/fcm_notifications
 
