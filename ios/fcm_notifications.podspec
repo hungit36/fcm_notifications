@@ -15,7 +15,7 @@ Complement of FCM Notifications to allow firebase with all fcm resources in Flut
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'fcm_notifications'
+  s.dependency 'awesome_notifications'
   s.dependency 'IosAwnCore', '0.7.3'
   #s.dependency 'IosAwnFcmCore'
   s.dependency 'IosAwnFcmDist', '0.7.5'
