@@ -18,30 +18,31 @@ class FcmSilentData extends Model {
   NotificationLifeCycle? get createdLifeCycle => _createdLifeCycle;
 
   @override
-  FcmSilentData? fromMap(Map<String, dynamic> dataMap) {
-    _id = dataMap[NOTIFICATION_ID];
+  FcmSilentData? fromMap(Map<String, dynamic> mapData) {
+    _id = mapData[NOTIFICATION_ID];
 
-    if (data != null)
+    if (data != null) {
       _data?.clear();
-    else
+    } else {
       _data = {};
+    }
 
-    for (String key in dataMap.keys) {
+    for (String key in mapData.keys) {
       switch (key) {
         case NOTIFICATION_CREATED_DATE:
           _createdDate = AwesomeAssertUtils.extractValue(
-              NOTIFICATION_CREATED_DATE, dataMap, DateTime);
+              NOTIFICATION_CREATED_DATE, mapData, DateTime);
           break;
 
         case NOTIFICATION_CREATED_SOURCE:
           _createdSource = AwesomeAssertUtils.extractEnum(
-              NOTIFICATION_CREATED_SOURCE, dataMap, NotificationSource.values);
+              NOTIFICATION_CREATED_SOURCE, mapData, NotificationSource.values);
           break;
 
         case NOTIFICATION_CREATED_LIFECYCLE:
           _createdLifeCycle = AwesomeAssertUtils.extractEnum(
               NOTIFICATION_CREATED_LIFECYCLE,
-              dataMap,
+              mapData,
               NotificationLifeCycle.values);
           continue;
 
@@ -49,7 +50,7 @@ class FcmSilentData extends Model {
           break;
 
         default:
-          _data![key] = dataMap[key]?.toString();
+          _data![key] = mapData[key]?.toString();
           break;
       }
     }

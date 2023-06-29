@@ -10,9 +10,9 @@ import 'package:fcm_notifications/src/fcm_definitions.dart';
 Future<void> silentPushBackgroundMain() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  const MethodChannel _channel = MethodChannel(DART_FCM_REVERSE_CHANNEL);
+  const MethodChannel channel = MethodChannel(DART_FCM_REVERSE_CHANNEL);
 
-  _channel.setMethodCallHandler((MethodCall call) async {
+  channel.setMethodCallHandler((MethodCall call) async {
     switch (call.method) {
       case CHANNEL_METHOD_SILENT_CALLBACK:
         await channelMethodSilentCallbackHandle(call);
@@ -23,7 +23,7 @@ Future<void> silentPushBackgroundMain() async {
     }
   });
 
-  _channel.invokeMethod<void>(CHANNEL_METHOD_PUSH_NEXT_DATA);
+  channel.invokeMethod<void>(CHANNEL_METHOD_PUSH_NEXT_DATA);
 }
 
 /// This method handle the silent callback as a flutter plugin
@@ -32,13 +32,14 @@ Future<void> channelMethodSilentCallbackHandle(MethodCall call) async {
     bool success = await receiveSilentData(
         (call.arguments as Map).cast<String, dynamic>());
 
-    if (!success)
+    if (!success) {
       throw FcmNotificationsException(
           'Silent data could not be recovered');
+    }
   } catch (e) {
-    print(
+    debugPrint(
         "FCM Notifications: An error occurred in your background messaging handler:");
-    print(e);
+    debugPrint(e.toString());
   }
 }
 

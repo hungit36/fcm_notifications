@@ -1,3 +1,6 @@
+
+// ignore_for_file: constant_identifier_names
+
 const String CHANNEL_FLUTTER_PLUGIN = 'fcm_notifications';
 
 const SILENT_DATA_BACKGROUND_HANDLE = 'onSilentDataHandle';

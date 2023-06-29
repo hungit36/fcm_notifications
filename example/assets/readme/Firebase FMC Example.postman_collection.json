@@ -54,7 +54,7 @@
 						"send"
 					]
 				},
-				"description": "Firebase Message example, using Flutter Awesome Notifications"
+				"description": "Firebase Message example, using Flutter Fcm Notifications"
 			},
 			"response": []
 		},
@@ -106,7 +106,7 @@
 						"send"
 					]
 				},
-				"description": "Firebase Message example, using Flutter Awesome Notifications"
+				"description": "Firebase Message example, using Flutter Fcm Notifications"
 			},
 			"response": []
 		},
@@ -204,7 +204,7 @@
 						"send"
 					]
 				},
-				"description": "Firebase Message example, using Flutter Awesome Notifications"
+				"description": "Firebase Message example, using Flutter Fcm Notifications"
 			},
 			"response": []
 		},
@@ -271,7 +271,7 @@
 						"send"
 					]
 				},
-				"description": "Firebase Message example, using Flutter Awesome Notifications"
+				"description": "Firebase Message example, using Flutter Fcm Notifications"
 			},
 			"response": []
 		},
@@ -338,7 +338,7 @@
 						"send"
 					]
 				},
-				"description": "Firebase Message example, using Flutter Awesome Notifications"
+				"description": "Firebase Message example, using Flutter Fcm Notifications"
 			},
 			"response": []
 		},
@@ -390,7 +390,7 @@
 						"send"
 					]
 				},
-				"description": "Firebase Message example, using Flutter Awesome Notifications"
+				"description": "Firebase Message example, using Flutter Fcm Notifications"
 			},
 			"response": []
 		}

@@ -68,12 +68,12 @@ class FcmNotifications {
     });
 
     if (tokenCallbackReference == null) {
-      print('Callback FcmTokenHandler is not defined or is invalid.'
+      debugPrint('Callback FcmTokenHandler is not defined or is invalid.'
           '\nPlease, ensure to create a valid global static method to handle it.');
     }
 
     if (silentCallbackReference == null) {
-      print('Callback FcmSilentDataHandler is not defined or is invalid.'
+      debugPrint('Callback FcmSilentDataHandler is not defined or is invalid.'
           '\nPlease, ensure to create a valid global static method to handle it.');
     }
 
@@ -100,11 +100,11 @@ class FcmNotifications {
                 'Silent data could not be recovered');
           }
         } on DartCallbackException {
-          print('Fatal: could not find silent callback');
+          debugPrint('Fatal: could not find silent callback');
         } catch (e) {
-          print(
+          debugPrint(
               "FCM Notifications: An error occurred in your silent data handler:");
-          print(e);
+          debugPrint(e.toString());
         }
         return;
 
